@@ -14,6 +14,16 @@ public class Stepic {
     public static void main(String[] cmdArgs) {
         System.out.println("Hello Stepic");
         // single
+        byte a = -1;
+        System.out.println(Byte.toString(a));
+        System.out.println(Integer.toBinaryString((int)a));
+        a >>= 1;
+        System.out.println(Byte.toString(a));
+        System.out.println(Integer.toBinaryString((int)a));
+        //System.out.println((int)a);
+        int b = a >>> 7;
+        int c = a >> 7;
+        System.out.println((byte)b);
 
         /*
         multiple
