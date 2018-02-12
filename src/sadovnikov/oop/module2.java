@@ -5,8 +5,8 @@ import java.util.Arrays;
 
 public class module2 {
     public static void main(String[] args) {
-        Robot robot = new Robot(0, 0, Direction.UP);
-        moveRobot(robot, 0, 20);
+        Robot robot = new Robot(0, 0, Direction.RIGHT);
+        moveRobot(robot, 10, 0);
         System.out.println(robot.getX());
         System.out.println(robot.getY());
     }
@@ -105,35 +105,26 @@ public class module2 {
         System.out.println(Arrays.toString(vector));
         int vect_mult = start_napravlenie[0] * vector[0] - start_napravlenie[1] * vector[1];
         int scal_mult = start_napravlenie[0] * vector[0] + start_napravlenie[1] * vector[1];
-        // проверка на коллинеарность
-        if (a / b == toX - robot.getX() / toY - robot.getY()){
-            if (start_napravlenie[0] * vector[0] < 0 | start_napravlenie[1] *  vector[1] < 0){
-                robot.turnRight();
-                robot.turnRight();
-            }
-            while (toX - robot.getX() != 0 & toY - robot.getY() != 0) {
-                robot.stepForward();
-            }
-        }
         // неколлинеарные векторы
-        else {
-            if (vect_mult < 0) {
-                robot.turnRight();
-            } else {
-                robot.turnRight();
-            }
-            while (vector[0] != 0 | vector[1] != 0) {
-                robot.stepForward();
-            }
-            if (vect_mult < 0) {
-                robot.turnRight();
-            } else {
-                robot.turnRight();
-            }
-            while (vector[0] != 0 & vector[1] != 0) {
-                robot.stepForward();
-            }
+        if (vect_mult < 0) {
+            robot.turnRight();
+        } else {
+            robot.turnRight();
+        }
+        while (toX - robot.getX() != 0 | toX - robot.getY() != 0) {
+            System.out.println("cycle");
+            robot.stepForward();
+        }
+        if (vect_mult < 0) {
+            robot.turnRight();
+        } else {
+            robot.turnRight();
+        }
+        while (toX - robot.getX() != 0 & toX - robot.getY() != 0) {
+            robot.stepForward();
         }
 
     }
+
+
 }
