@@ -1,4 +1,4 @@
-package shapes;
+package sadovnikov.oop.shapes;
 
 /**
  * Created by vitaly on 24/09/16.

@@ -1,4 +1,4 @@
-package shapes;
+package sadovnikov.oop.shapes;
 
 /**
  * Created by vitaly on 24/09/16.
@@ -7,18 +7,24 @@ public class Circle extends Shape {
     private final Point center;
     private final double radius;
 
-    public Circle(Point center, double radius, Color color) {
+    Circle(Point center, double radius, Color color) {
         super(color);
         this.center = center;
         this.radius = radius;
     }
 
-    public Point getCenter() { return center; }
+    public Point getCenter() {
+        return center;
+    }
 
-    public double getRaius() { return radius; }
+    public double getRaius() {
+        return radius;
+    }
 
     @Override
-    public double getArea() { return radius * radius  * Math.PI; }
+    public double getArea() {
+        return radius * radius * Math.PI;
+    }
 
     @Override
     public String toString() {

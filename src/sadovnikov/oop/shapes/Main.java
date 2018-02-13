@@ -1,4 +1,4 @@
-package shapes;
+package sadovnikov.oop.shapes;
 
 /**
  * Created by vitaly on 24/09/16.
@@ -17,7 +17,7 @@ public class Main {
         Shape shape = triangle;
         Object object = triangle;
         triangle = (Triangle) object;
-
+        System.out.println(shape);
         Shape[] shapes = {circle, triangle, square};
         printArrayElements(shapes);
 
@@ -34,7 +34,7 @@ public class Main {
     private static Shape findShapeWithMaxArea(Shape[] shapes) {
         Shape maxShape = null;
         double maxArea = Double.NEGATIVE_INFINITY;
-        for (Shape shape: shapes) {
+        for (Shape shape : shapes) {
             double area = shape.getArea();
             if (area > maxArea) {
                 maxArea = area;

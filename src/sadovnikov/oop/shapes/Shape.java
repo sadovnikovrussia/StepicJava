@@ -1,4 +1,4 @@
-package shapes;
+package sadovnikov.oop.shapes;
 
 /**
  * Created by vitaly on 24/09/16.
@@ -8,9 +8,9 @@ package shapes;
 public class Shape {
     private final Color color;
 
-    public Shape(Color color) { this.color = color; }
+    Shape(Color color) { this.color = color; }
 
-    public Color getColor() { return color; }
+    Color getColor() { return color; }
 
     public double getArea() { return Double.NaN; }
 
