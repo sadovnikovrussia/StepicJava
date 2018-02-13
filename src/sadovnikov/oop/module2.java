@@ -5,8 +5,8 @@ import java.util.Arrays;
 
 public class module2 {
     public static void main(String[] args) {
-        Robot robot = new Robot(0, 0, Direction.RIGHT);
-        moveRobot(robot, 10, 0);
+        Robot robot = new Robot(0, 0, Direction.UP);
+        moveRobot(robot, -5, -5);
         System.out.println(robot.getX());
         System.out.println(robot.getY());
     }
@@ -83,48 +83,38 @@ public class module2 {
 
     public static void moveRobot(Robot robot, int toX, int toY) {
         // your code
-        int a = 0;
-        int b = 0;
-        int[] location = new int[]{robot.getX(), robot.getY()};
-        if (robot.getDirection() == Direction.UP) {
-            a = 0;
-            b = 1;
-        } else if (robot.getDirection() == Direction.RIGHT) {
-            a = 1;
-            b = 0;
-        } else if (robot.getDirection() == Direction.LEFT) {
-            a = -1;
-            b = 0;
-        } else if (robot.getDirection() == Direction.DOWN) {
-            a = 0;
-            b = -1;
+        int a = Math.abs(toX - robot.getX());
+        int b = Math.abs(toY - robot.getY());
+        if (toX - robot.getX() > 0) {
+            while (robot.getDirection() != Direction.RIGHT){
+                robot.turnRight();
+            }
+            //System.out.println(robot.getDirection());
+        } else if (toX - robot.getX() < 0){
+            while (robot.getDirection() != Direction.LEFT){
+                robot.turnRight();
+            }
+            //System.out.println(robot.getDirection());
         }
-        int[] start_napravlenie = new int[]{a, b};
-        int[] vector = new int[]{toX - robot.getX(), toY - robot.getY()};
-        System.out.println(Arrays.toString(start_napravlenie));
-        System.out.println(Arrays.toString(vector));
-        int vect_mult = start_napravlenie[0] * vector[0] - start_napravlenie[1] * vector[1];
-        int scal_mult = start_napravlenie[0] * vector[0] + start_napravlenie[1] * vector[1];
-        // неколлинеарные векторы
-        if (vect_mult < 0) {
-            robot.turnRight();
-        } else {
-            robot.turnRight();
-        }
-        while (toX - robot.getX() != 0 | toX - robot.getY() != 0) {
-            System.out.println("cycle");
+        for (int i = 0; i < a; i++) {
+            //System.out.print("i=");
+            //System.out.println(i);
             robot.stepForward();
         }
-        if (vect_mult < 0) {
-            robot.turnRight();
-        } else {
-            robot.turnRight();
+        if (toY - robot.getY() > 0) {
+            while (robot.getDirection() != Direction.UP){
+                robot.turnRight();
+            }
+        } else if (toY - robot.getY() < 0){
+            while (robot.getDirection() != Direction.DOWN){
+                robot.turnRight();
+            }
         }
-        while (toX - robot.getX() != 0 & toX - robot.getY() != 0) {
+        for (int j = 0; j < b; j++) {
+            //System.out.print("j=");
+            //System.out.println(j);
             robot.stepForward();
         }
-
     }
-
 
 }
