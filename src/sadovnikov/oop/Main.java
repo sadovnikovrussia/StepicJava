@@ -8,7 +8,6 @@ public class Main {
         System.out.println(asciiCharSequence.charAt(0));
         System.out.println(asciiCharSequence.subSequence(0,3));
         System.out.println(asciiCharSequence);
-
         System.out.println(asciiCharSequence.toString());//Hello!
         massiv[0] = 74;
         System.out.println(asciiCharSequence.toString());//Hello!
