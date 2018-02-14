@@ -2,18 +2,19 @@ package sadovnikov.oop;
 
 public class Main {
     public static void main(String[] args) {
-        double c = 1;
-        double m = 1;
-        ComplexNumber a = new ComplexNumber(-2.5, -3.5);
-        ComplexNumber b = new ComplexNumber(-2.5, -3.5);
-        ComplexNumber d = a;
-        System.out.println(a.equals(b));
-        System.out.println(a.equals(d));
-        System.out.println(a.hashCode());
-        System.out.println(b.hashCode());
-        System.out.println(d.hashCode());
-        System.out.println(Double.hashCode(c));
-        System.out.println(Double.hashCode(m));
-        System.out.println();
+        byte[] massiv = {97,104,113,115,116,117,118,119};
+        AsciiCharSequence asciiCharSequence = new AsciiCharSequence(massiv);
+        System.out.println(asciiCharSequence.length());
+        System.out.println(asciiCharSequence.charAt(0));
+        System.out.println(asciiCharSequence.subSequence(0,3));
+        System.out.println(asciiCharSequence);
+
+        System.out.println(asciiCharSequence.toString());//Hello!
+        massiv[0] = 74;
+        System.out.println(asciiCharSequence.toString());//Hello!
+        int a = 1;
+        int b = a;
+        a = 2;
+        System.out.println(b);
     }
 }

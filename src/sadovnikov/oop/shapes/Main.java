@@ -14,6 +14,8 @@ public class Main {
         Square square = new Square(
                 new Point(5, 5), 2, Color.BLUE);
 
+        //Shape figura = new Shape(Color.RED);
+        //System.out.println(figura);
         Shape shape = triangle;
         Object object = triangle;
         triangle = (Triangle) object;

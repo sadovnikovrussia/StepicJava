@@ -5,13 +5,13 @@ package sadovnikov.oop.shapes;
  */
 
 
-public class Shape {
+public abstract class Shape {
     private final Color color;
 
     Shape(Color color) { this.color = color; }
 
     Color getColor() { return color; }
 
-    public double getArea() { return Double.NaN; }
+    public abstract double getArea();
 
 }
