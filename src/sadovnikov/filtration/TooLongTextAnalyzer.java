@@ -1,6 +1,6 @@
 package sadovnikov.filtration;
 
-public class TooLongTextAnalyzer implements TextAnalyzer {
+class TooLongTextAnalyzer implements TextAnalyzer {
     private int maxLength;
 
     public TooLongTextAnalyzer(int length) {

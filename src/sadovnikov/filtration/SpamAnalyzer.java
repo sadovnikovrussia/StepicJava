@@ -1,21 +1,11 @@
 package sadovnikov.filtration;
 
-public class SpamAnalyzer extends KeywordAnalyzer implements TextAnalyzer {
+class SpamAnalyzer extends KeywordAnalyzer {
 
     private String[] keywords;
 
-    public SpamAnalyzer(String[] strings) {
+    SpamAnalyzer(String[] strings) {
         keywords = strings;
-    }
-
-    @Override
-    public Label processText(String text) {
-        for (String keyword : keywords) {
-            if (text.contains(keyword)) {
-                return getLabel();
-            }
-        }
-        return Label.OK;
     }
 
     @Override

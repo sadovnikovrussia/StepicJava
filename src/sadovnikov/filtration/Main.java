@@ -1,7 +1,8 @@
 package sadovnikov.filtration;
 
 public class Main {
-    public static Label checkLabels(TextAnalyzer[] analyzers, String text) {
+
+    private static Label checkLabels(TextAnalyzer[] analyzers, String text, String lvlOK) {
         for (TextAnalyzer analyzer : analyzers) {
             if (analyzer.processText(text) != Label.OK) {
                 return analyzer.processText(text);
@@ -25,9 +26,10 @@ public class Main {
                 "Используйте, пожалуйста, модификатор доступа по-умолчанию для всех классов.\n" +
                 "В итоге, реализуйте классы KeywordAnalyzer, SpamAnalyzer, NegativeTextAnalyzer и TooLongTextAnalyzer и метод checkLabels. TextAnalyzer и Label уже подключены, лишние импорты вам не потребуются";
         String[] words = new String[] {"Дальше", "вам"};
-        TextAnalyzer[] textAnalyzers = {new SpamAnalyzer(words), new TooLongTextAnalyzer(10)};
 
-        System.out.println(checkLabels(textAnalyzers, comment));
+        TextAnalyzer[] textAnalyzers = {new TooLongTextAnalyzer(100), new NegativeTextAnalyzer()};
+
+        System.out.println(checkLabels(textAnalyzers, comment, "OK"));
 
 
     }

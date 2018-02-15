@@ -1,20 +1,8 @@
 package sadovnikov.filtration;
 
-public class NegativeTextAnalyzer
-        extends KeywordAnalyzer
-        implements TextAnalyzer {
+class NegativeTextAnalyzer extends KeywordAnalyzer {
 
     private String[] keywords = {":(", "=(", ":|"};
-
-    @Override
-    public Label processText(String text) {
-        for (String keyword : keywords) {
-            if (text.contains(keyword)) {
-                return getLabel();
-            }
-        }
-        return Label.OK;
-    }
 
     @Override
     protected String[] getKeywords() {
