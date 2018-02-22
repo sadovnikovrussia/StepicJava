@@ -18,7 +18,5 @@ public class Main1 {
         for (int j = arrayList.size() - 1; i >= 0; i--) {
             System.out.println(arrayList.get(j) + " ");
         }
-
-
     }
 }
